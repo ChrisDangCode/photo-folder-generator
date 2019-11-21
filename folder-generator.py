@@ -20,7 +20,17 @@ current_day_RAW = "./" + current_day  + "/RAW"
 current_day_selects = "./" + current_day + "/selects"
 current_day_video = "./" + current_day + "/video"
 
+if os.path.exists(current_day):
+    createFolder(current_day + "_1")
+
+# Loop to generate folders every subsequent run
+# print len([name for name in os.listdir('.') if os.path.isfile(name)])
+
 createFolder(current_day)
 createFolder(current_day_RAW)
 createFolder(current_day_selects)
 createFolder(current_day_video)
+
+# print(os.path.isdir(current_day))
+# print(os.path.exists(current_day))
+
