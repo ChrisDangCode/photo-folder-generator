@@ -13,12 +13,17 @@ def createFolder(directory):
             os.makedirs(directory)
     except OSError:
         print ('Error: Creating directory. ' +  directory)
-        
+
+# Create path name variables
 today = datetime.datetime.today()
 current_day = today.strftime('%Y_%m_%d')
-current_day_RAW = "./" + current_day  + "/RAW"
-current_day_selects = "./" + current_day + "/selects"
-current_day_video = "./" + current_day + "/video"
+current_day_RAW = "./" + current_day  + "/0-RAW"
+current_day_jpeg = "./" + current_day  + "/1-jpeg"
+current_day_video = "./" + current_day + "/2-video"
+current_day_selects = "./" + current_day + "/3-selects"
+current_day_export = "./" + current_day + "/4-export"
+current_day_export_full = "./" + current_day + "/4-export" + "/full-size"
+current_day_export_web = "./" + current_day + "/4-export" + "/web-size"
 
 if os.path.exists(current_day):
     createFolder(current_day + "_1")
@@ -28,8 +33,12 @@ if os.path.exists(current_day):
 
 createFolder(current_day)
 createFolder(current_day_RAW)
-createFolder(current_day_selects)
+createFolder(current_day_jpeg)
 createFolder(current_day_video)
+createFolder(current_day_selects)
+createFolder(current_day_export)
+createFolder(current_day_export_full)
+createFolder(current_day_export_web)
 
 # print(os.path.isdir(current_day))
 # print(os.path.exists(current_day))
